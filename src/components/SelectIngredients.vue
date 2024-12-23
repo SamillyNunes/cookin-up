@@ -1,12 +1,20 @@
 <script lang="ts">
 import { getCategories } from '@/http';
+import type ICategory from '@/interfaces/ICategory';
 
 
 export default {
+    // as propriedades dentro de data sao reativas
     data(){
         return {
-            categories: getCategories(),
+            categories: [] as ICategory[],
         }
+    },
+    async created(){
+        // a lista de categorias vai ser inicializada no data e depois
+        // quando obter a resposta do metodo getCategories() vai ser redefinida
+        // pelo created
+        this.categories = await getCategories();
     }
 };
 
