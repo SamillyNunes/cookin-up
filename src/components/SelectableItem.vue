@@ -20,9 +20,10 @@ export default {
 </script>
 
 <template>
+    <!-- A pratica de usar @ eh para substituir o v-on, eh como um atalho -->
     <button
         class="item"
-        v-on:click="selected=!selected"
+        @click="selected=!selected"
         :aria-pressed="selected"
     >
         <Tag :text="item" :selected="selected" />
