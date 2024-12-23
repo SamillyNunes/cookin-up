@@ -21,6 +21,7 @@ export default {
             <ul class="ingredientes-sua-lista">
                 <li 
                     v-for="ingredient in ingredients" 
+                    v-bind:key="ingredient"
                     class="ingrediente"
                 >
                     {{ ingredient }}
