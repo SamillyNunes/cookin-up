@@ -1,10 +1,12 @@
 <script lang="ts">
 import { getCategories } from '@/http';
 import type ICategory from '@/interfaces/ICategory';
+import CategoryCard from './CategoryCard.vue';
 
 
 export default {
     // as propriedades dentro de data sao reativas
+    components: { CategoryCard: CategoryCard },
     data(){
         return {
             categories: [] as ICategory[],
@@ -33,7 +35,7 @@ export default {
                 v-for="category in categories"
                 :key="category.nome"
             >
-                {{ category.nome }}
+                <CategoryCard :category="category" />
             </li>
         </ul>
 
