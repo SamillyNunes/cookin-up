@@ -1,6 +1,14 @@
 <script lang="ts">
+import { getCategories } from '@/http';
 
-export default {};
+
+export default {
+    data(){
+        return {
+            categories: getCategories(),
+        }
+    }
+};
 
 </script>
 
@@ -13,7 +21,12 @@ export default {};
         </p>
 
         <ul class="categorias">
-
+            <li
+                v-for="category in categories"
+                :key="category.nome"
+            >
+                {{ category.nome }}
+            </li>
         </ul>
 
         <p class="paragrafo dica">
