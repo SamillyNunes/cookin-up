@@ -26,7 +26,7 @@ export default {
                     v-for="ingredient in ingredients" 
                     :key="ingredient"
                 >
-                    <Tag :text="ingredient" />
+                    <Tag :text="ingredient" selected />
                 </li>
             </ul>
 
