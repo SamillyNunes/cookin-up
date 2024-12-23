@@ -18,7 +18,7 @@ export default {
                 Sua lista:
             </span>
 
-            <ul class="ingredientes-sua-lista">
+            <ul v-if="ingredients.length" class="ingredientes-sua-lista">
                 <li 
                     v-for="ingredient in ingredients" 
                     :key="ingredient"
@@ -27,6 +27,11 @@ export default {
                     {{ ingredient }}
                 </li>
             </ul>
+
+            <p v-else class="paragrafo lista-vazia">
+                <img src="../assets/images/icones/lista-vazia.svg" alt="Ícone de pesquisa">
+                Sua lista está vazia, selecione ingredientes para iniciar.
+            </p>
         </section>
     </main>
 
