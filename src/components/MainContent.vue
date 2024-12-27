@@ -1,6 +1,7 @@
 <script lang="ts">
 import AppButton from './AppButton.vue';
 import CurrentList from './CurrentList.vue';
+import CustomFooter from './CustomFooter.vue';
 import SelectIngredients from './SelectIngredients.vue';
 
 export default {
@@ -20,7 +21,7 @@ export default {
             }
         }
     },
-    components: { SelectIngredients, CurrentList, AppButton }
+    components: { SelectIngredients, CurrentList, AppButton, CustomFooter }
 };
 
 </script>
@@ -34,11 +35,13 @@ export default {
             @add-item="addIngredient"
             @remove-item="removeIngredient"
         />
-
+        
         <AppButton
             label="Buscar receitas!"
         />
     </main>
+
+    <CustomFooter/>
 
 </template>
 
