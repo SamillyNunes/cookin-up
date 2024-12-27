@@ -1,5 +1,4 @@
 <script lang="ts">
-import AppButton from './AppButton.vue';
 import CurrentList from './CurrentList.vue';
 import CustomFooter from './CustomFooter.vue';
 import SelectIngredients from './SelectIngredients.vue';
@@ -21,7 +20,7 @@ export default {
             }
         }
     },
-    components: { SelectIngredients, CurrentList, AppButton, CustomFooter }
+    components: { SelectIngredients, CurrentList, CustomFooter }
 };
 
 </script>

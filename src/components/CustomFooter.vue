@@ -7,7 +7,7 @@ export default {};
 <template>
 
     <footer class="footer">
-        <h5>Desenvolvido com a Alura | 2024 - Projeto sem fins comerciais.</h5>
+        Desenvolvido com a Alura | 2024 - Projeto sem fins comerciais.
     </footer>
 
 </template>
