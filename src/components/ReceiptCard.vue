@@ -49,7 +49,8 @@ export default {
 .label{
     text-align: center;
     color: var(--cinza);
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
+    font-family: var(--font-family-padrao);
 }
 
 </style>
