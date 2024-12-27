@@ -1,4 +1,5 @@
 <script lang="ts">
+import AppButton from './AppButton.vue';
 import CurrentList from './CurrentList.vue';
 import SelectIngredients from './SelectIngredients.vue';
 
@@ -19,7 +20,7 @@ export default {
             }
         }
     },
-    components: { SelectIngredients, CurrentList }
+    components: { SelectIngredients, CurrentList, AppButton }
 };
 
 </script>
@@ -32,6 +33,10 @@ export default {
         <SelectIngredients 
             @add-item="addIngredient"
             @remove-item="removeIngredient"
+        />
+
+        <AppButton
+            label="Buscar receitas!"
         />
     </main>
 
