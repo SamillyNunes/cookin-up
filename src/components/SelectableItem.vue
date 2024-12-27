@@ -14,7 +14,19 @@ export default {
         return {
             selected: false,
         }
-    }
+    },
+    methods: {
+        onClick(){
+            this.selected = !this.selected;
+
+            if(this.selected){
+                // emitindo um evento personalizado, com o nome 'addItem'
+                // em que eh possivel escutar do componente pai
+                this.$emit('addItem', this.item);
+            }
+        }
+    },
+    emits: ['addItem']
 }
 
 </script>
@@ -23,7 +35,7 @@ export default {
     <!-- A pratica de usar @ eh para substituir o v-on, eh como um atalho -->
     <button
         class="item"
-        @click="selected=!selected"
+        @click="onClick"
         :aria-pressed="selected"
     >
         <Tag :text="item" :selected="selected" />

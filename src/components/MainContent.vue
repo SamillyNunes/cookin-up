@@ -5,7 +5,12 @@ import SelectIngredients from './SelectIngredients.vue';
 export default {
     data(){
         return {
-            ingredients: ['Alho', 'Manteiga', 'Oregáno', 'Pão'],
+            ingredients: [] as string[],
+        }
+    },
+    methods: {
+        addIngredient(item: string){
+            this.ingredients.push(item);
         }
     },
     components: { SelectIngredients, CurrentList }
@@ -18,7 +23,9 @@ export default {
     <main class="conteudo-principal">
         <CurrentList :ingredients="ingredients"/>
 
-        <SelectIngredients />
+        <SelectIngredients 
+            @add-item="addIngredient"
+        />
     </main>
 
 </template>

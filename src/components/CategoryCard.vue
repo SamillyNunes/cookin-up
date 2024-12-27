@@ -12,7 +12,8 @@ export default {
             type: Object as PropType<ICategory>,
             required: true,
         },
-    }
+    },
+    emits: ['addItem'],
 };
 
 </script>
@@ -37,7 +38,12 @@ export default {
                 v-for="ingredient in category.ingredientes"
                 :key="ingredient"
             >
-                <SelectableItem :item="ingredient" />
+                <!-- Aqui no addItem, estamos reemitindo o evento e passando
+                 a informacao que veio com ele, que vem no $event -->
+                <SelectableItem 
+                    :item="ingredient" 
+                    @add-item="$emit('addItem', $event)"
+                />
             </li>
         </ul>
     </article>

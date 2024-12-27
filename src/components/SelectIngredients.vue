@@ -12,6 +12,7 @@ export default {
             categories: [] as ICategory[],
         }
     },
+    emits:['addItem'],
     async created(){
         // a lista de categorias vai ser inicializada no data e depois
         // quando obter a resposta do metodo getCategories() vai ser redefinida
@@ -35,7 +36,10 @@ export default {
                 v-for="category in categories"
                 :key="category.nome"
             >
-                <CategoryCard :category="category" />
+                <CategoryCard 
+                    :category="category" 
+                    @add-item="$emit('addItem', $event)" 
+                />
             </li>
         </ul>
 
