@@ -11,6 +11,12 @@ export default {
     methods: {
         addIngredient(item: string){
             this.ingredients.push(item);
+        },
+        removeIngredient(item: string){
+            if(this.ingredients.includes(item)){
+                let i = this.ingredients.indexOf(item);
+                this.ingredients.splice(i, 1);
+            }
         }
     },
     components: { SelectIngredients, CurrentList }
@@ -25,6 +31,7 @@ export default {
 
         <SelectIngredients 
             @add-item="addIngredient"
+            @remove-item="removeIngredient"
         />
     </main>
 

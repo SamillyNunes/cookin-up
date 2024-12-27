@@ -12,7 +12,7 @@ export default {
             categories: [] as ICategory[],
         }
     },
-    emits:['addItem'],
+    emits:['addItem', 'removeItem'],
     async created(){
         // a lista de categorias vai ser inicializada no data e depois
         // quando obter a resposta do metodo getCategories() vai ser redefinida
@@ -39,6 +39,8 @@ export default {
                 <CategoryCard 
                     :category="category" 
                     @add-item="$emit('addItem', $event)" 
+                    @remove-item="$emit('removeItem', $event)"
+                    
                 />
             </li>
         </ul>

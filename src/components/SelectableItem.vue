@@ -23,10 +23,12 @@ export default {
                 // emitindo um evento personalizado, com o nome 'addItem'
                 // em que eh possivel escutar do componente pai
                 this.$emit('addItem', this.item);
+            } else {
+                this.$emit('removeItem', this.item);
             }
         }
     },
-    emits: ['addItem']
+    emits: ['addItem', 'removeItem']
 }
 
 </script>

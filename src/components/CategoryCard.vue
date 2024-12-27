@@ -13,7 +13,7 @@ export default {
             required: true,
         },
     },
-    emits: ['addItem'],
+    emits: ['addItem', 'removeItem'],
 };
 
 </script>
@@ -43,6 +43,7 @@ export default {
                 <SelectableItem 
                     :item="ingredient" 
                     @add-item="$emit('addItem', $event)"
+                    @remove-item="$emit('removeItem', $event)"
                 />
             </li>
         </ul>
