@@ -2,11 +2,12 @@
 import { getCategories } from '@/http';
 import type ICategory from '@/interfaces/ICategory';
 import CategoryCard from './CategoryCard.vue';
+import AppButton from './AppButton.vue';
 
 
 export default {
     // as propriedades dentro de data sao reativas
-    components: { CategoryCard: CategoryCard },
+    components: { CategoryCard: CategoryCard, AppButton },
     data(){
         return {
             categories: [] as ICategory[],
@@ -48,6 +49,11 @@ export default {
         <p class="paragrafo dica">
             *Atenção: Consideramos que você tem em casa sal, pimenta e água
         </p>
+
+        
+        <AppButton
+            label="Buscar receitas!"
+        />
     </section>
 </template>
 

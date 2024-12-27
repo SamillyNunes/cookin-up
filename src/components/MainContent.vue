@@ -36,9 +36,6 @@ export default {
             @remove-item="removeIngredient"
         />
         
-        <AppButton
-            label="Buscar receitas!"
-        />
     </main>
 
     <CustomFooter/>
