@@ -13,7 +13,7 @@ export default {
             categories: [] as ICategory[],
         }
     },
-    emits:['addItem', 'removeItem'],
+    emits:['addItem', 'removeItem', 'searchReceipts'],
     async created(){
         // a lista de categorias vai ser inicializada no data e depois
         // quando obter a resposta do metodo getCategories() vai ser redefinida
@@ -53,6 +53,7 @@ export default {
         
         <AppButton
             label="Buscar receitas!"
+            @click="$emit('searchReceipts')"
         />
     </section>
 </template>

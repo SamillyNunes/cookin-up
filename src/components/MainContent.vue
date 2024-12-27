@@ -1,12 +1,16 @@
 <script lang="ts">
 import CurrentList from './CurrentList.vue';
 import CustomFooter from './CustomFooter.vue';
+import Receipts from './Receipts.vue';
 import SelectIngredients from './SelectIngredients.vue';
+
+type Page = 'SelectIngredients' | 'ShowReceipts';
 
 export default {
     data(){
         return {
             ingredients: [] as string[],
+            content: 'SelectIngredients' as Page,
         }
     },
     methods: {
@@ -18,9 +22,12 @@ export default {
                 let i = this.ingredients.indexOf(item);
                 this.ingredients.splice(i, 1);
             }
+        },
+        navigate(page: Page){
+            this.content=page;
         }
     },
-    components: { SelectIngredients, CurrentList, CustomFooter }
+    components: { SelectIngredients, CurrentList, CustomFooter, Receipts }
 };
 
 </script>
@@ -31,8 +38,14 @@ export default {
         <CurrentList :ingredients="ingredients"/>
 
         <SelectIngredients 
+            v-if="content === 'SelectIngredients'"
             @add-item="addIngredient"
             @remove-item="removeIngredient"
+            @search-receipts="navigate('ShowReceipts')"
+        />
+
+        <Receipts  
+            v-if="content==='ShowReceipts'"
         />
         
     </main>
