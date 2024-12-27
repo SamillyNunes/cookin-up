@@ -1,7 +1,7 @@
 <script lang="ts">
 import CurrentList from './CurrentList.vue';
 import CustomFooter from './CustomFooter.vue';
-import Receipts from './Receipts.vue';
+import ReceiptsList from './ReceiptsList.vue';
 import SelectIngredients from './SelectIngredients.vue';
 
 type Page = 'SelectIngredients' | 'ShowReceipts';
@@ -27,7 +27,7 @@ export default {
             this.content=page;
         }
     },
-    components: { SelectIngredients, CurrentList, CustomFooter, Receipts }
+    components: { SelectIngredients, CurrentList, CustomFooter, ReceiptsList }
 };
 
 </script>
@@ -44,7 +44,7 @@ export default {
             @search-receipts="navigate('ShowReceipts')"
         />
 
-        <Receipts  
+        <ReceiptsList  
             v-if="content==='ShowReceipts'"
         />
         
