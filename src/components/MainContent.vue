@@ -46,6 +46,7 @@ export default {
 
         <ReceiptsList  
             v-if="content==='ShowReceipts'"
+            @select-ingredients="navigate('SelectIngredients')"
         />
         
     </main>

@@ -2,10 +2,11 @@
 import { getReceipts } from '@/http';
 import type IReceipt from '@/interfaces/IReceipt';
 import ReceiptCard from './ReceiptCard.vue';
+import AppButton from './AppButton.vue';
 
 
 export default {
-    components: { ReceiptCard },
+    components: { ReceiptCard, AppButton },
     data() {
         return {
             receipts: [] as IReceipt[],
@@ -15,6 +16,7 @@ export default {
         this.receipts = await getReceipts();
         console.log(this.receipts);
     },
+    emits: ['selectIngredients'],
 };
 
 </script>
@@ -32,7 +34,13 @@ export default {
             :receipt="receipt"
         />
         </div>
+        
     </section>
+    
+    <AppButton 
+        label="Editar lista" 
+        @click="$emit('selectIngredients')"
+    />
 
 </template>
 
