@@ -1,40 +1,32 @@
-# cookin-up
+# Cookin Up!
+Website onde o usuário pode selecionar os ingredientes que tem em casa e com isso pode obter uma lista de receitas possíveis para fazer com esses ingredientes. Desenvolvido para pôr em prática os conceitos de Vue.js.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Screenshots
 
-## Recommended IDE Setup
+- Tela de inicio:
+<img src="https://github.com/user-attachments/assets/66f518b2-483f-45f3-b931-d1fd1d63856f" width=500 />
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Tela de seleção de ingredientes:
+<img src="https://github.com/user-attachments/assets/fb3e1f5a-a8c4-486b-9ac2-5c91329b52b3" width=500 />
 
-## Type Support for `.vue` Imports in TS
+- Tela de receitas:
+<img src="https://github.com/user-attachments/assets/1d44412a-995a-42b8-a769-4f9c8498b8fb" width=500 />
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Setup
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Para rodar este projeto, é necessário ter o Node.js instalado. Para prosseguir, rode o comando:
 
 ```sh
 npm install
 ```
+para instalar os pacotes necessários.
 
-### Compile and Hot-Reload for Development
+Para rodar o projeto, rode o seguinte comando:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Créditos
+Este projeto foi desenvolvido em conjunto com a Alura, [neste curso em especifico](https://cursos.alura.com.br/course/vue-3-componentes-diretivas-reatividade-framework), para complementar a formação de Vue.js.
