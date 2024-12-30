@@ -45,14 +45,15 @@ export default {
                 @remove-item="removeIngredient"
                 @search-receipts="navigate('ShowReceipts')"
             />
-    
-            <ReceiptsList  
-                v-else
-                @select-ingredients="navigate('SelectIngredients')"
-            />
-
 
         </KeepAlive>
+    
+        <ReceiptsList  
+            v-if="content==='ShowReceipts'"
+            :ingredients="ingredients"
+            @select-ingredients="navigate('SelectIngredients')"
+
+        />
 
         
     </main>

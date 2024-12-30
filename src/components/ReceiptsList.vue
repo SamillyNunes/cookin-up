@@ -3,18 +3,38 @@ import { getReceipts } from '@/http';
 import type IReceipt from '@/interfaces/IReceipt';
 import ReceiptCard from './ReceiptCard.vue';
 import AppButton from './AppButton.vue';
+import type { PropType } from 'vue';
+import { list2HaveAllList1Itens } from '@/utils/arrays';
 
 
 export default {
     components: { ReceiptCard, AppButton },
+    props: {
+        ingredients: {
+            type: Array as PropType<string[]>,
+            required: true,
+        }
+    },
     data() {
         return {
             receipts: [] as IReceipt[],
         }
     },
     async created() {
-        this.receipts = await getReceipts();
-        console.log(this.receipts);
+        console.log('ENTROU NO CREATED!!!');
+        const receiptsList = await getReceipts();
+        
+        this.receipts = receiptsList.filter((receipt) => {
+            // Todos os ingredientes de uma receita x devem estar contemplados na 
+            // lista de ingredientes selecionado
+            const receiptIsAvailable = list2HaveAllList1Itens(
+                receipt.ingredientes,
+                this.ingredients,
+            );
+
+            return receiptIsAvailable;
+
+        });
     },
     emits: ['selectIngredients'],
 };
