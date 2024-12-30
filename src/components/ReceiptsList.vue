@@ -26,13 +26,26 @@ export default {
     <section class="receipts">
         <h1 class="cabecalho">Receitas</h1>
         <p class="paragrafo results">Resultados encontrados: {{ receipts.length }}</p>
-        <p class="options" >Veja as opções de receitas que encontramos com os ingredientes que você tem por ai!</p>
+        <p class="options" >
+            {{ 
+                receipts.length ? 
+                'Veja as opções de receitas que encontramos com os ingredientes que você tem por ai!'
+                : 'Ops, não encontramos resultados para sua combinação. Vamos tentar de novo?' 
+            }}
+        </p>
 
         <div class="list">
             <ReceiptCard
-            v-for="receipt in receipts"
-            :receipt="receipt"
-        />
+                v-for="receipt in receipts"
+                :receipt="receipt"
+            />
+
+            <img
+                v-if="receipts.length===0"
+                src="../assets/images/sem-receitas.png"
+                alt="Imagem mostrando que não foram encontradas receitas"
+            />
+
         </div>
         
     </section>
