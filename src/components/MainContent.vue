@@ -36,18 +36,24 @@ export default {
 
     <main class="conteudo-principal">
         <CurrentList :ingredients="ingredients"/>
+        
+        <KeepAlive>
 
-        <SelectIngredients 
-            v-if="content === 'SelectIngredients'"
-            @add-item="addIngredient"
-            @remove-item="removeIngredient"
-            @search-receipts="navigate('ShowReceipts')"
-        />
+            <SelectIngredients 
+                v-if="content === 'SelectIngredients'"
+                @add-item="addIngredient"
+                @remove-item="removeIngredient"
+                @search-receipts="navigate('ShowReceipts')"
+            />
+    
+            <ReceiptsList  
+                v-else
+                @select-ingredients="navigate('SelectIngredients')"
+            />
 
-        <ReceiptsList  
-            v-if="content==='ShowReceipts'"
-            @select-ingredients="navigate('SelectIngredients')"
-        />
+
+        </KeepAlive>
+
         
     </main>
 
